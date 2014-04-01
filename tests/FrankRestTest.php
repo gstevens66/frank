@@ -1,4 +1,10 @@
 <?php
+//Pull in the FrankTestCase class for extention
+//Pull in the restagent.lib.php HTTP REST Client
+
+/*
+This file will perform a number of URL validations along with Middleware setup
+*/
 
 require_once (__DIR__ . '/FrankTestCase.class.php');
 require_once (__DIR__ . '/restagent.lib.php');
@@ -9,12 +15,13 @@ require_once (__DIR__ . '/restagent.lib.php');
  */
 class FrankRestTest extends FrankTestCase {
   private $request;
-  
+  //set the test URL
   public function setUp() {
     parent::setUp();
     $this->request = new \restagent\Request($this->server_url);
   }
 
+//URL validation for numeric charactors
   public function test_pattern_num_single() {
     try {
       $resp = (object) $this->request->get('/users/1');
@@ -28,6 +35,7 @@ class FrankRestTest extends FrankTestCase {
     $this->assertEquals(404, $resp['code'], 'Alpha characters were parsed when a numeric arg was expected.');    
   }  
   
+//URL validation
   public function test_freeform() {
     try {
       // This test ensures that this bug is fixed: https://github.com/frank/frank/issues/13
@@ -41,6 +49,9 @@ class FrankRestTest extends FrankTestCase {
     $resp = $this->request->get('/users/alpha');
     $this->assertEquals(404, $resp['code'], 'Alpha characters were parsed when a numeric arg was expected.');    
   }  
+
+
+//URL validation for alpha-num chars
 
   public function test_pattern_alpha_single() {
     try {
@@ -88,7 +99,7 @@ class FrankRestTest extends FrankTestCase {
     $resp = (object) $this->request->get('/users/asfksalfjk/books/35345');  
     $this->assertEquals(404, $resp->code, 'Alpha characters were parsed when a numeric arg was expected');
   }
-  
+  //Testint the middleware routing
   public function test_middleware() {
     try {      
       $resp = (object) $this->request->get('/middlewaretest/777');
@@ -104,6 +115,7 @@ class FrankRestTest extends FrankTestCase {
     }   
   }
 
+  //tests the middle ware for get and put initialization
   public function test_scoped_middleware() {
     $resp = (object) $this->request->get('/foo');
     $resp->decoded = json_decode($resp->data); 
@@ -128,6 +140,7 @@ class FrankRestTest extends FrankTestCase {
     $this->assertEquals('success', $resp->decoded->scopeModification, 'Scoped middleware test: Expected middleware to run and modify response.');    
   }
 
+  //Test the middleware doc setup
   public function test_middleware_autodoc() {
     try {
       $resp = (object) $this->request->get('/testapidocs');
@@ -150,6 +163,7 @@ class FrankRestTest extends FrankTestCase {
     $this->assertArrayNotHasKey('Access-Control-Allow-Origin', $resp->headers, 'CORS test: expected CORS headers not to be set.');
   }
   
+  //The Middleware mthod override was not set up
   public function test_middleware_methodoverride() {
     $resp = (object) $this->request
                           ->header("X-HTTP-Method-Override", "patch")
@@ -159,7 +173,7 @@ class FrankRestTest extends FrankTestCase {
     $this->assertEquals('patch', $resp->decoded->method, 'Method Override test: expected http method to be overriden in POST request.');
 
   }
-  
+  //Test the paramaters
   public function test_get_query_param() {
     $resp = (object) $this->request->get('/query_var_test?test_param=');
     $resp->decoded = json_decode($resp->data);      
