@@ -1,10 +1,14 @@
-<?php
-//Pull in the FrankTestCase class for extention
-//Pull in the restagent.lib.php HTTP REST Client
-
 /*
-This file will perform a number of URL validations along with Middleware setup
+File: FrankRestTest.php
+Author: ?
+Date: ?
+Desc:
+This file will pull in the FrankTestCase class for extention, pull in the restagent.lib.php HTTP REST Client
+and perform a number of URL validations along with Middleware setup
 */
+
+<?php
+
 
 require_once (__DIR__ . '/FrankTestCase.class.php');
 require_once (__DIR__ . '/restagent.lib.php');
