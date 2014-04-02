@@ -2,7 +2,7 @@
 * Extends abstract class Frank_Middleware
 *
 * @param $hook
-* 'preroute' or 'prerender'.
+*   'preroute' or 'prerender'.
 * @param $rules
 *
 * @return Frank_Middlware
