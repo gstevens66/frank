@@ -6,6 +6,7 @@ Desc:
 Extends abstract class Frank_Middleware
 @param $hook
 'preroute' or 'prerender'.
+
 @returns Frank_Middlware
 */
 <?php
