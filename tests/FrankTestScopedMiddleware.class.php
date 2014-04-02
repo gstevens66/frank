@@ -1,3 +1,12 @@
+/*
+* Extends abstract class Frank_Middleware
+*
+* @param $hook
+* 'preroute' or 'prerender'.
+* @param $rules
+*
+* @return Frank_Middlware
+*/
 <?php
 
 class FrankTestScopedMiddleware extends Frank_Middleware {
