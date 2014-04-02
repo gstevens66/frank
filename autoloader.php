@@ -1,5 +1,9 @@
 <?php
 
+/*
+ This will enable automatically loading classes 
+ without the need to explicitly include class files
+*/
 spl_autoload_register ('frank_autoloader');
 
 function frank_autoloader($classname) {
