@@ -1,6 +1,24 @@
 /*
+File: FrankRestTest.php
+Author: ?
+Date: ?
+Desc:
   Starting point for the application
   Pulls in the library, middleware and coltroller classes
+  
+  Adds to the $router object:
+    - FrankAutoDocumentator
+    - MethodOverride
+    - FrankCORS
+    - FrankTestScopedMiddleware
+    
+  Adds the following paths for the $router object:
+    - /users
+    - /users/{id}
+    - /v2/times/{dt}/episodes
+    - /tags/{id}
+    - /users/{user_id}/books/{book_id}
+    - /query_var_test
 */
 
 <?php
