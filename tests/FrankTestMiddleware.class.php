@@ -5,7 +5,7 @@
 * 'preroute' or 'prerender'.
 * @param $rules
 *
-* @return Frank_Middlware
+* @returns Frank_Middlware
 */
 <?php
 
