@@ -7,8 +7,6 @@ Desc:
  
  @param $hook
     'preroute' or 'prerender'.
- @param $rules
-
  @returns Frank_Middlware
 
 */
