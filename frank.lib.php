@@ -1,11 +1,16 @@
-<?php
 
 /*
- *   File defines error exceptions, constants and
- * and the Frank_Callback_Util cllback class for route-processing.
- /
-class Frank_Callback_Util {
+File: frank.lib.php
+Author: ?
+Date: ?
+Desc:
+  File defines error exceptions, constants and
+  and the Frank_Callback_Util cllback class for route-processing.
+  A callback class for route-processing.
 */
+<?php
+class Frank_Callback_Util {
+
 /** Invalid path exception **/
 class Frank_InvalidPathException extends Exception {}
 /** Non existant middleware class **/
@@ -43,9 +48,7 @@ final class Frank_Constants {
   const PATTERN_MD5        = '(?P<%s>[a-z0-9]{32})';  
 }
 
-/**
-* Callback class for route-processing.
-*/
+
 class Frank_Callback_Util {
   
   private static function loadFile($file) {
