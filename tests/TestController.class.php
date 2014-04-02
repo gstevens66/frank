@@ -1,3 +1,13 @@
+/*
+File: TestController.class.php
+Author: ?
+Date: ?
+Desc:
+ *$req is the current HTTP request object.
+ *$res is the current response object.
+  receives the current HTTP object and encodes it and sends it back or
+  receives the current HTTP object and tests the paramaters
+*/
 <?php
 
 class TestController {
