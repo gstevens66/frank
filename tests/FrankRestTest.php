@@ -99,7 +99,7 @@ class FrankRestTest extends FrankTestCase {
     $resp = (object) $this->request->get('/users/asfksalfjk/books/35345');  
     $this->assertEquals(404, $resp->code, 'Alpha characters were parsed when a numeric arg was expected');
   }
-  //Testint the middleware routing
+  //Testing the middleware routing
   public function test_middleware() {
     try {      
       $resp = (object) $this->request->get('/middlewaretest/777');
@@ -115,7 +115,7 @@ class FrankRestTest extends FrankTestCase {
     }   
   }
 
-  //tests the middle ware for get and put initialization
+  //tests the middleware for get and put initialization
   public function test_scoped_middleware() {
     $resp = (object) $this->request->get('/foo');
     $resp->decoded = json_decode($resp->data); 
