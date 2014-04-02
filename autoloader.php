@@ -1,9 +1,19 @@
-<?php
-
 /*
+ File: autoloader.php
+ Author: ?
+ Date: ?
+ 
+ Desc: 
  This will enable automatically loading classes 
  without the need to explicitly include class files
-*/
+ 
+ PARAM: $classname
+ Returns TRUE on success or FALSE on failure. 
+*/     
+
+<?php
+
+
 spl_autoload_register ('frank_autoloader');
 
 function frank_autoloader($classname) {
