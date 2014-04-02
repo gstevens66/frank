@@ -1,11 +1,16 @@
 /*
-* Extends abstract class Frank_Middleware
-* 
-* @param $hook
-* 'preroute' or 'prerender'.
-* @param $rules
-*
-* @returns Frank_Middlware
+File: FrankTestMiddleware.class.php
+Author: ?
+Date: ?
+Desc:
+ Extends abstract class Frank_Middleware
+ 
+ @param $hook
+    'preroute' or 'prerender'.
+ @param $rules
+
+ @returns Frank_Middlware
+
 */
 <?php
 
