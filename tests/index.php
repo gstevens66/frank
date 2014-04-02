@@ -1,3 +1,8 @@
+/*
+  Starting point for the application
+  Pulls in the library, middleware and coltroller classes
+*/
+
 <?php
 
 require_once(__DIR__ . '/../frank.lib.php');
