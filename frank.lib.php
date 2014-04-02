@@ -1,5 +1,11 @@
 <?php
 
+/*
+ *   File defines error exceptions, constants and
+ * and the Frank_Callback_Util cllback class for route-processing.
+ /
+class Frank_Callback_Util {
+*/
 /** Invalid path exception **/
 class Frank_InvalidPathException extends Exception {}
 /** Non existant middleware class **/
@@ -83,7 +89,7 @@ class Frank_Callback_Util {
   
 }
 
-/**
+ **
  * Generic URI matcher and parser implementation.
  */
 class Frank_Template {
@@ -159,6 +165,12 @@ class Frank_Template {
       'value'   => $defaultValue
     );
   }
+  
+  
+  /*
+  * param $URI
+  * return $matches
+  */
   
   public function match($uri) {
     
